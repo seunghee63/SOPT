@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,14 +15,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //입력받은 id값을 문자열 변수로 바뀌줌
-        val inputId: String = et_main_id.text.toString()
 
         //sign up 버튼을 눌렀을 때,
         btn_main_sign_up.setOnClickListener {
+
+            val mInputId: String = et_main_id.text.toString() //그냥 input으로 하면 에러남
             val intent = Intent(this, SignUpActivity::class.java)
 
-            //id라는 이름으로 InputId 값 넘김
-            intent.putExtra("id",inputId)
+            //id라는 이름으로 mInputId 값 넘김
+            intent.putExtra("id",mInputId)
             startActivityForResult(intent, REQUEST_CODE_SIGN_UP)
         }
 
