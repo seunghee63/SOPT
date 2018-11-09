@@ -26,23 +26,27 @@ class InstagramRoomRecyclerViewAdapter(val ctx : Context, val dataList : ArrayLi
     override fun onBindViewHolder(holder: Holder, position: Int) { //뷰 바인딩!!
 
         holder.counter.text = dataList[position].counter.toString()
+        //holder.isLike.isClickable = dataList[position].isLike
 
-        //holder.isLike.clickable = dataList[position].isLike
-
-        holder.item_btn.setOnClickListener {
-            ctx.toast(dataList[position].counter.toString())
-            
-            //if (!dataList[position].islike) {
-              //  holder.tv_rv_item_instagram_room_favorite.visibility = View.GONE
-            //}
+        if (!dataList[position].isLike) {
+            holder.like_img.visibility = View.GONE
         }
+
+//        holder.item_btn.setOnClickListener {
+//            ctx.toast(dataList[position].counter.toString())
+//            if (!dataList[position].isLike) {
+//                holder.like_img.visibility = View.GONE
+//            }else
+//                holder.like_img.visibility = View.
+//        }
 
     }
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val counter: TextView = itemView.findViewById(R.id.tv_rv_item_instagram_room_cnt) as TextView
-        val isLike: ImageView = itemView.findViewById(R.id.tv_rv_item_instagram_room_favorite) as ImageView
+        val isLike: ImageView = itemView.findViewById(R.id.iv_rv_item_instagram_room_favorite) as ImageView
 
+        val like_img : ImageView = itemView.findViewById(R.id.iv_rv_item_instagram_room_favorite) as ImageView
         val item_btn : RelativeLayout =itemView.findViewById(R.id.item_list) as RelativeLayout
     }
 }

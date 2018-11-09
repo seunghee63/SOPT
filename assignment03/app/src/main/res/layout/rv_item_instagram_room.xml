@@ -24,8 +24,9 @@
           android:background="#FFFFFF"/>
 
     <ImageView
-            android:id="@+id/tv_rv_item_instagram_room_favorite"
+            android:id="@+id/iv_rv_item_instagram_room_favorite"
             android:clickable="false"
+
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_alignParentRight="true"

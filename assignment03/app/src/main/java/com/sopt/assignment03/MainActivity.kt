@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         var dataList: ArrayList<MyItemData> = ArrayList()
         dataList.add(MyItemData(1, false))
         dataList.add(MyItemData(2, false))
-        dataList.add(MyItemData(3, false))
+        dataList.add(MyItemData(3, true))
         dataList.add(MyItemData(4, false))
         dataList.add(MyItemData(5, false))
         dataList.add(MyItemData(6, false))
