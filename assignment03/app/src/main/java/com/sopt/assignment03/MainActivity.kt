@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         //val anyDataList : ArrayList<Any> = arrayListOf("dtdt")//자바의 object. 최상위 데이터타입
 
 
-        //임시데이터
+        //임시데이터se
         var dataList: ArrayList<MyItemData> = ArrayList()
         dataList.add(MyItemData(1, false))
         dataList.add(MyItemData(2, false))

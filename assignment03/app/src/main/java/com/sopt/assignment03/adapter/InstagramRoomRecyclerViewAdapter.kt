@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.sopt.assignment03.R
 import com.sopt.assignment03.data.MyItemData
+import org.jetbrains.anko.toast
 
 
 class InstagramRoomRecyclerViewAdapter(val ctx : Context, val dataList : ArrayList<MyItemData>) : RecyclerView.Adapter<InstagramRoomRecyclerViewAdapter.Holder>() {
@@ -24,12 +26,23 @@ class InstagramRoomRecyclerViewAdapter(val ctx : Context, val dataList : ArrayLi
     override fun onBindViewHolder(holder: Holder, position: Int) { //뷰 바인딩!!
 
         holder.counter.text = dataList[position].counter.toString()
+
         //holder.isLike.clickable = dataList[position].isLike
+
+        holder.item_btn.setOnClickListener {
+            ctx.toast(dataList[position].counter.toString())
+            
+            //if (!dataList[position].islike) {
+              //  holder.tv_rv_item_instagram_room_favorite.visibility = View.GONE
+            //}
+        }
 
     }
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val counter: TextView = itemView.findViewById(R.id.tv_rv_item_instagram_room_cnt) as TextView
         val isLike: ImageView = itemView.findViewById(R.id.tv_rv_item_instagram_room_favorite) as ImageView
+
+        val item_btn : RelativeLayout =itemView.findViewById(R.id.item_list) as RelativeLayout
     }
 }
