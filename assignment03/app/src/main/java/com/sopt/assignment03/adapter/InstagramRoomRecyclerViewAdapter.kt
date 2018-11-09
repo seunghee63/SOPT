@@ -32,21 +32,25 @@ class InstagramRoomRecyclerViewAdapter(val ctx : Context, val dataList : ArrayLi
             holder.like_img.visibility = View.GONE
         }
 
-//        holder.item_btn.setOnClickListener {
-//            ctx.toast(dataList[position].counter.toString())
-//            if (!dataList[position].isLike) {
-//                holder.like_img.visibility = View.GONE
-//            }else
-//                holder.like_img.visibility = View.
-//        }
+        holder.item_btn.setOnClickListener {
+            ctx.toast(dataList[position].counter.toString())
+
+            if (dataList[position].isLike == true) {
+                holder.like_img.visibility = View.GONE
+            } else
+                holder.like_img.visibility = View.VISIBLE
+
+        }
 
     }
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val counter: TextView = itemView.findViewById(R.id.tv_rv_item_instagram_room_cnt) as TextView
-        val isLike: ImageView = itemView.findViewById(R.id.iv_rv_item_instagram_room_favorite) as ImageView
+        //val isLike: ImageView = itemView.findViewById(R.id.iv_rv_item_instagram_room_favorite) as ImageView
 
+        //하트이미지
         val like_img : ImageView = itemView.findViewById(R.id.iv_rv_item_instagram_room_favorite) as ImageView
+        //리스트 레이아웃
         val item_btn : RelativeLayout =itemView.findViewById(R.id.item_list) as RelativeLayout
     }
 }
