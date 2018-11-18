@@ -1,4 +1,4 @@
-#[SOPT] 23rd SOPT Android파트 과제
+[SOPT] 23rd SOPT Android파트 과제
 ======================
 
 ## 1주차) Layoyt
